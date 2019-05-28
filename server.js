@@ -44,8 +44,8 @@ app.get('/getentry', (req,res)=>{getentry.handleGetEntry(req,res,db)});
 app.get('/post/:id',(req,res)=> {selectPost.handleSelectPost(req,res,db)})
 
 
-app.listen(process.env.Port || 3000,()=>{
-	console.log(`Running on Port ${process.env.Port}`);
+app.listen(process.env.PORT || 3000,()=>{
+	console.log(`Running on Port ${process.env.PORT}`);
 });
 
 
