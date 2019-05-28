@@ -11,6 +11,10 @@ const profile = require('./controllers/profile');
 const getentry = require('./controllers/profile');
 const selectPost = require('./controllers/entry');
 
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
+
 const db = knex({
   client: 'pg',
   connection:{
@@ -19,17 +23,11 @@ const db = knex({
   }
 });
 
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
-
-
-
 // db.select('*').from('post').then(data => {
 // 	console.log(data);
 // });
 app.get('/',(req,res)=>{
-  res.send('Api is running');
+  res.send('Server is running');
 })
 
 app.get('/getall', (req,res) =>{db.select('*').from('post')
