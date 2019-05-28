@@ -1,5 +1,5 @@
-
 const handleEntry = (req,res,db) => {
+	console.log("Got")
 	const{category, title,description,email,phone,address,city,state,budget,account_id} = req.body;
 	db.transaction(trx=>{
 		trx.insert({
@@ -33,6 +33,23 @@ const handleEntry = (req,res,db) => {
 }
 
 
+const handleSelectPost=(req,res,db)=>{
+	const{id} = req.params;
+	console.log(id);
+	db.select('*').from('post').where({id})
+	.then(post=>{
+		if(post.length){
+			res.json(post[0]);
+		}else{
+			res.status(400).json('Post Not Found')
+		}
+		
+	})
+	.catch(err=> res.status(400).json('Error getting post'))
+}
+
+
 module.exports={
-	handleEntry: handleEntry
+	handleEntry: handleEntry,
+	handleSelectPost:handleSelectPost
 }

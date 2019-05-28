@@ -2,20 +2,13 @@
   "name": "home-service-api",
   "version": "1.0.0",
   "description": "\\",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Xiuw/home-service-api.git"
-  },
+ 
   "author": "Xiu Wang",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Xiuw/home-service-api/issues"
-  },
-  "homepage": "https://github.com/Xiuw/home-service-api#readme",
   "devDependencies": {
     "nodemon": "^1.18.10"
   },
