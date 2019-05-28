@@ -29,8 +29,11 @@ app.use(cors());
 // db.select('*').from('post').then(data => {
 // 	console.log(data);
 // });
+app.get('/',(req,res)=>{
+  res.send('Api is running');
+})
 
-app.get('/', (req,res) =>{db.select('*').from('post')
+app.get('/getall', (req,res) =>{db.select('*').from('post')
 	.then(data=> { 
 		let newArr = data.reverse(); 
 		res.json(newArr);
