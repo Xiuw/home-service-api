@@ -1,7 +1,10 @@
 const handleEntry = (req,res,db) => {
 	console.log("Attempt to post")
-	const{category, title,description,email,phone,address,city,state,budget,account_id} = req.body;
-	console.log(category);
+	const{category,title,description,email,phone,address,city,state,budget,account_id} = req.body;
+	console.log(account_id);
+	if(!category ||!title|| !description||!phone ||!city || !state || !account_id){
+		return res.status(400).json('Error')
+	}
 	db.transaction(trx=>{
 		trx.insert({
 		category: category,
@@ -23,8 +26,8 @@ const handleEntry = (req,res,db) => {
 		.returning("entries")
 		.where("id","=",id[0])
 		.increment('entries',1)
-		.returning('entries')
-		.then(entries=> res.json(entries[0]));
+		.returning('id')
+		.then(id=> res.json(id[0]));
 	})
 	.then(trx.commit)
 	.catch(trx.rollback)
