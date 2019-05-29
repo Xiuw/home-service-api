@@ -1,5 +1,5 @@
 const handleEntry = (req,res,db) => {
-	console.log("Got")
+	console.log(category.req.body);
 	const{category, title,description,email,phone,address,city,state,budget,account_id} = req.body;
 	db.transaction(trx=>{
 		trx.insert({
