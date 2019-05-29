@@ -1,6 +1,7 @@
 const handleEntry = (req,res,db) => {
-	console.log(category.req.body);
+	console.log("Attempt to post")
 	const{category, title,description,email,phone,address,city,state,budget,account_id} = req.body;
+	console.log(category);
 	db.transaction(trx=>{
 		trx.insert({
 		category: category,
