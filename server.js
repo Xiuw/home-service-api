@@ -23,7 +23,7 @@ const db = knex({
   //   password : '',
   //   database : 'db'
   // }
-   connection: {
+  connection: {
     connectionString:process.env.DATABASE_URL,
     ssl:true,
   }

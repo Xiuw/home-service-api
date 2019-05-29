@@ -44,8 +44,7 @@ const handleSelectPost=(req,res,db)=>{
 			res.json(post[0]);
 		}else{
 			res.status(400).json('Post Not Found')
-		}
-		
+		}	
 	})
 	.catch(err=> res.status(400).json('Error getting post'))
 }
