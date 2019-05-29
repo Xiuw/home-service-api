@@ -1,7 +1,5 @@
 const handleEntry = (req,res,db) => {
-	console.log("Attempt to post")
 	const{category,title,description,email,phone,address,city,state,budget,account_id} = req.body;
-	console.log(category,title,description,email,phone,address,city,state,budget,account_id);
 	if(!category ||!title|| !description||!phone ||!city || !state || !account_id){
 		return res.status(400).json('Error')
 	}
