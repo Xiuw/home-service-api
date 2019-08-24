@@ -67,5 +67,4 @@ app.get("/post/:id", (req, res) => {
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Running on Port ${process.env.PORT}`);
-  // console.log("app running on port 3000");
 });

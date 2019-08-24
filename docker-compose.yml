@@ -1,0 +1,10 @@
+version: "3.6"
+
+services:
+  home-service-api:
+    container_name: backend
+    command: npm start
+    build: ./
+    working_dir: /usr/src/home-service-api
+    ports:
+      - "3000:3000"
